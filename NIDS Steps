@@ -1,0 +1,34 @@
+ A Network Intrusion Detection System (NIDS) serves as a vital component in the defense strategy against cyber attacks, designed to monitor network traffic for suspicious activity and potential intrusions.
+
+A NIDS operates by analyzing inbound and outbound traffic across a network in real-time, looking for patterns that may indicate a security breach or malicious activity. These systems utilize a combination of signature-based detection, which identifies known threats by comparing network traffic against a database of attack signatures, and anomaly-based detection, which identifies unusual patterns that may signify an unknown threat.
+
+The primary goal of a NIDS is to detect intrusions before they cause damage, allowing network administrators to respond quickly to threats. By providing visibility into network activity and generating alerts for potential security incidents, NIDS plays a crucial role in maintaining the integrity, confidentiality, and availability of network resources.
+
+In this project, we will explore the fundamental principles of NIDS, delve into the methodologies used for detecting network intrusions, and implement a basic NIDS using Python. The objective is to gain a deeper understanding of how these systems work and how they can be deployed to enhance network security.
+
+______________________________________________________________________
+STEPS: Using Snort tools
+
+-Update your package repository:
+sudo apt-get update
+
+-Download and install Snort:
+sudo apt-get install snort
+
+-Locate the configuration file:
+sudo nano /etc/snort/snort.conf
+
+-Configure network variables (e.g., HOME_NET) to match your network:
+var HOME_NET 192.168.1.0/24
+
+-Enable or customize rule sets:
+include $RULE_PATH/local.rules
+
+-. Download and Update Rules
+
+-Run Snort in test mode:
+sudo snort -T -c /etc/snort/snort.conf
+
+-If there are no errors, start Snort:
+sudo snort -A console -q -c /etc/snort/snort.conf -i eth0
+
